@@ -14,7 +14,7 @@ axios.get('http://www2.ville.montreal.qc.ca/services_citoyens/pdf_transfert/L29_
             updated_at: $(patinoire).children('arrondissement').children('date_maj').text()
         });
     });
-    fs.writeFile("rinks.json", JSON.stringify(rinks), () => {
+    fs.writeFile("data/rinks.json", JSON.stringify(rinks), () => {
         console.log('Rinks file generated');
     });
 })
