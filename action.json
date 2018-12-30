@@ -1,0 +1,21 @@
+{
+    "actions": [
+        {
+            "description": "Default Welcome Intent",
+            "name": "MAIN",
+            "fulfillment": {
+                "conversationName": "rinks"
+            },
+            "intent": {
+                "name": "actions.intent.MAIN"
+            }
+        }
+    ],
+    "conversations": {
+        "rinks": {
+            "name": "rinks",
+            "url": "https://a7645c99.ngrok.io"
+        }
+    },
+    "locale": "en"
+}
