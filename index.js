@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const {setRinks, getRinks} = require('./cron');
+const {actions} = require('./actions');
 
 app.get('/', (req, res) => {
     getRinks(req.query.caption);
