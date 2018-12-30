@@ -1,13 +1,16 @@
 const express = require('express');
 const app = express();
+const {setRinks, getRinks} = require('./cron');
 
 app.get('/', (req, res) => {
-    console.log(req);
-    res.send('Hello World!');
+    getRinks(req.query.caption);
+    res.send();
 });
 
-const server = app.listen(8080, () => {
-    const host = server.address().address;
-    const port = server.address().port;
-    console.log(`Application running at http://${host}:${port}`);
+// Call by Google Cloud Scheduler each hour — GCS can't start a node process and need a HTTP link.
+app.post('/refresh', (req, res) => {
+    setRinks();
+    return res.send('ok');
 });
+
+app.listen(8080);
