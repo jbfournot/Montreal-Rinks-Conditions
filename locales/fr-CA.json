@@ -1,0 +1,10 @@
+{
+    "welcome": "Bonjour! Pour quel patinoire souhaitez-vous avoir plus d'informations ?",
+    "rink_closed": "Oh, la patinoire {{name}} est présentement fermée.",
+    "rink_error": "Désolé, un problème est survenu. Veuillez essayer un peu plus tard.",
+    "rink_open": "La {{name}} est ouverte.",
+    "icecondition_message": "La glace est {{quality}}",
+    "icecondition_error": "Je n'ai pas d'informations sur la qualité de la glace.",
+    "quality_good": "bonne",
+    "quality_bad": "mauvaise"
+}

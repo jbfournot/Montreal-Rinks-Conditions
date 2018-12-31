@@ -1,0 +1,10 @@
+{
+    "welcome": "Hello, give me the name of the rink where you want to go?!",
+    "rink_closed": "Mmh, the rink {{name}} is currently closed",
+    "rink_error": "Sorry, a problem occured. Please try again later.",
+    "rink_open": "The rink {{name}} is open.",
+    "icecondition_message": "The ice quality is {{quality}}",
+    "icecondition_error": "I have not informations about the ice quality",
+    "quality_good": "good",
+    "quality_bad": "bad"
+ }
