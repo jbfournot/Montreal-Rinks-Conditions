@@ -8,8 +8,8 @@ setRinks = () => {
         const $ = cheerio.load(result.data, {xmlMode: true});
         $('patinoires patinoire').each((key, patinoire) => {
             rinks.rinks.push({
-                name: $(patinoire).children('nom').text(),
-                condition: $(patinoire).children('condition').text(),
+                name: $(patinoire).children('nom').text().replace(/\([A-Z]*\)/gm, ''),
+                condition: $(patinoire).children('condition').text().toLocaleLowerCase(),
                 is_open: $(patinoire).children('ouvert').text() == '1' ? true : false,
                 updated_at: $(patinoire).children('arrondissement').children('date_maj').text()
             });
@@ -31,7 +31,7 @@ getRinks = (caption) => {
             }
         });
         return rink;
-    }).sort((a, b) => b.occurence_found - a.occurence_found);
+    }).filter(rink => rink.occurence_found > 0).sort((a, b) => b.occurence_found - a.occurence_found);
 }
 
 module.exports = {
