@@ -1,0 +1,28 @@
+{
+    "actions": [
+        {
+            "description": "Default Welcome Intent",
+            "name": "MAIN",
+            "fulfillment": {
+                "conversationName": "rinks"
+            },
+            "intent": {
+                "name": "actions.intent.MAIN",
+                "trigger": {
+                    "queryPatterns": [
+                        "je veux patiner",
+                        "comment est la glace?",
+                        "conditions des patinoires"
+                    ]
+                  }
+            }
+        }
+    ],
+    "conversations": {
+        "rinks": {
+            "name": "rinks",
+            "url": "https://8fec6af6.ngrok.io"
+        }
+    },
+    "locale": "fr"
+}
