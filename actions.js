@@ -11,7 +11,6 @@ i18n.configure({
 });
 
 app.middleware((conv) => {
-    console.log(conv.user.locale)
     i18n.setLocale(conv.user.locale);
 });
 
@@ -23,7 +22,6 @@ app.intent('actions.intent.TEXT', (conv, input) => {
     return new Promise((resolve) => {
         const rinks = getRinks(input);
         if(rinks.length > 0){
-            const space = ' ';
             const near_rink = rinks[0];
             if(!near_rink.is_open){
                 conv.close(i18n.__('rink_closed', {name: near_rink.name}));
@@ -35,7 +33,7 @@ app.intent('actions.intent.TEXT', (conv, input) => {
                 } else {
                     ice_conditions = i18n.__('icecondition_error');
                 }
-                conv.close(i18n.__('rink_open', {name: near_rink.name}) + space + ice_conditions)
+                conv.close(i18n.__('rink_open', {name: near_rink.name}) + ' ' + ice_conditions)
             }
         } else {
             conv.close(i18n.__('rink_error'));
